@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
       .collection("offers")
       .find({ from, to })
       .sort({ price: 1 })
-      .limit(1)
+      .limit(limit)
       .toArray();
 
     const compressed = zlib.gzipSync(JSON.stringify(offers));
