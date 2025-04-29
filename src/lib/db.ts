@@ -1,4 +1,5 @@
-import { MongoClient } from "mongodb";
-const client = new MongoClient(process.env.MONGODB_URI!);
+import { MongoClient } from "mongodb"
 
-export const mongo = client.db("travel_hub");
+const client = new MongoClient(process.env.MONGODB_URI!)
+
+export const mongo = client.db("travel_hub")
