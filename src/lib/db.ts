@@ -1,8 +1,4 @@
 import { MongoClient } from "mongodb";
+const client = new MongoClient(process.env.MONGODB_URI!);
 
-const uri =
-  "mongodb+srv://adammehdaouijorge:mdp@travelhub.mhpqsp6.mongodb.net/?retryWrites=true&w=majority&appName=TravelHub";
-
-const client = new MongoClient(uri!);
-
-export const mongo = client.db("sample_mflix");
+export const mongo = client.db("travel_hub");

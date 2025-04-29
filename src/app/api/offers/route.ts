@@ -17,16 +17,7 @@ export async function GET(req: NextRequest) {
 
   const cacheKey = `offers:${from}:${to}`;
 
-  try {
-    const offers = await mongo
-      .collection("comments")
-      .find({ name: "Mercedes Tyler" })
-      .toArray();
-
-    console.log("offers", offers);
-  } catch (error) {
-    console.log("error", error);
-  }
+  const offers = await mongo.collection("offers").find().toArray();
 
   return NextResponse.json({}, { status: StatusCodes.OK });
 }
