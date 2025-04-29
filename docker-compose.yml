@@ -1,0 +1,38 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: travel_hub
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+
+    volumes:
+      - mongo_data:/data/db
+      - ./scripts:/docker-entrypoint-initdb.d
+
+  redis:
+    image: redis:7.4.3
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  neo4j:
+    image: neo4j:2025-community
+    container_name: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/neo4jpassword
+    volumes:
+      - neo4j_data:/data
+
+volumes:
+  mongo_data:
+  redis_data:
+  neo4j_data:
