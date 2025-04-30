@@ -12,7 +12,7 @@
 1. **Clonez ce dépôt** (si ce n'est pas déjà fait) :
 
 ```bash
-git clone <url-du-repo>
+git clone https://github.com/DjibrilNaji/travel-hub.git
 cd travel-hub
 ```
 
