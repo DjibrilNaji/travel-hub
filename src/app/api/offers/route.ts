@@ -7,9 +7,9 @@ import zlib from "zlib"
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
 
-  const from = searchParams.get("from")
-  const to = searchParams.get("to")
-  const limit = parseInt(searchParams.get("limit") || "10", 10)
+  const from = searchParams.get("from");
+  const to = searchParams.get("to");
+  const limit = parseInt(searchParams.get("limit") ?? "10", 10);
 
   if (!from || !to)
     return NextResponse.json({ error: "Missing parameters" }, { status: StatusCodes.BAD_REQUEST })
@@ -48,8 +48,10 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(offers)
   } catch (error) {
+    console.error("Error fetching offers:", error);
+
     return NextResponse.json(
-      { error: "Internal error" },
+      { error: `Internal error: ${error}` },
       { status: StatusCodes.INTERNAL_SERVER_ERROR }
     )
   }
