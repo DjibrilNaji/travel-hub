@@ -34,8 +34,8 @@ services:
 
   nextjs:
     build:
-      context: .      
-      dockerfile: Dockerfile  
+      context: .
+      dockerfile: Dockerfile
     platform: linux/arm64
     container_name: nextjs
     ports:

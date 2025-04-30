@@ -73,14 +73,18 @@ export async function POST(request: NextRequest) {
       _id: new ObjectId(),
       from: body.from,
       to: body.to,
-      price: body.price,
-      provider: body.provider,
       departDate: new Date(body.departDate),
-      returnDate: new Date(body.returnDate)
+      returnDate: new Date(body.returnDate),
+      provider: body.provider,
+      price: body.price,
+      currency: body.currency,
+      legs: body.legs ? body.legs : [],
+      hotel: body.hotel,
+      activity: body.activity
     }
 
     await mongo.collection("offers").insertOne(offer)
-    await cache.publish(
+    await cacheHandler.publish(
       "offers:new",
       JSON.stringify({
         offerId: offer._id.toHexString(),
@@ -91,6 +95,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ offer }, { status: StatusCodes.CREATED })
   } catch (error) {
+    console.error("Error creating offer:", error)
     return NextResponse.json(
       { message: "Erreur lors de la création du token" },
       { status: StatusCodes.INTERNAL_SERVER_ERROR }

@@ -68,7 +68,7 @@ REDIS_PORT=6379
 
 ## Résumé
 
-- Démarrage ultra-simple :  
+- Démarrage ultra-simple :
 
 ```bash
 docker compose up -d

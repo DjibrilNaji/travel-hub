@@ -63,14 +63,14 @@ export default function HomePage() {
               <Card className="bg-background border">
                 <CardHeader>
                   <Search className="text-primary mb-2 h-10 w-10" />
-                  <CardTitle>Recherche d'offres</CardTitle>
+                  <CardTitle>Recherche d&apos;offres</CardTitle>
                   <CardDescription>
                     Trouvez rapidement les meilleures offres pour votre destination.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Filtrez par date, prix et compagnie pour trouver l'offre qui vous convient
+                    Filtrez par date, prix et compagnie pour trouver l&apos;offre qui vous convient
                     parfaitement.
                   </p>
                 </CardContent>

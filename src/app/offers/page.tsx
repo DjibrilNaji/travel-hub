@@ -58,15 +58,19 @@ export default function OffersPage() {
       <div className="flex items-center justify-between gap-4">
         <h1 className="text-2xl font-bold">Rechercher un vol</h1>
 
-        <Button variant="outline" size="sm" className="cursor-pointer gap-1" disabled>
-          Create Offer
-        </Button>
+        <Link href="/offers/create">
+          <Button variant="outline" size="sm" className="cursor-pointer gap-1">
+            Create Offer
+          </Button>
+        </Link>
       </div>
       <Form {...form}>
         <Card className="mx-auto w-full">
           <CardHeader>
             <CardTitle>Rechercher un vol</CardTitle>
-            <CardDescription>Sélectionnez les aéroports de départ et d'arrivée</CardDescription>
+            <CardDescription>
+              Sélectionnez les aéroports de départ et d&apos;arrivée
+            </CardDescription>
           </CardHeader>
 
           <CardContent>
@@ -132,7 +136,7 @@ export default function OffersPage() {
           <div>
             <p className="text-muted-foreground">Aucune offre trouvée.</p>
             <p className="text-muted-foreground">
-              Essayez de changer les aéroports de départ et d'arrivée.
+              Essayez de changer les aéroports de départ et d&apos;arrivée.
             </p>
           </div>
         )}

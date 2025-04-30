@@ -1,4 +1,3 @@
-// components/AirportSelect.tsx
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import {
   Select,
@@ -7,10 +6,11 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/components/ui/select"
+import { FieldValues, Path, UseFormReturn } from "react-hook-form"
 
-type AirportSelectProps = {
-  form: any
-  name: string
+type AirportSelectProps<T extends FieldValues> = {
+  form: UseFormReturn<T>
+  name: Path<T>
   label: string
   placeholder: string
 }
@@ -29,7 +29,12 @@ const AIRPORTS = [
   { code: "SYD", name: "Sydney Kingsford Smith Airport" }
 ]
 
-export default function AirportSelect({ form, name, label, placeholder }: AirportSelectProps) {
+export default function AirportSelect<T extends FieldValues>({
+  form,
+  name,
+  label,
+  placeholder
+}: AirportSelectProps<T>) {
   return (
     <FormField
       control={form.control}
