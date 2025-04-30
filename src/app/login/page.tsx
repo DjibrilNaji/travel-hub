@@ -18,6 +18,7 @@ import {
   FormMessage
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { useApp } from "@/context/useAppContext"
 import { LoginType } from "@/types/form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useMutation } from "@tanstack/react-query"
@@ -36,6 +37,7 @@ const FormSchema = z.object({
 
 export default function LoginPage() {
   const router = useRouter()
+  const { setIsAuthenticated, setTokenValue } = useApp()
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -49,6 +51,8 @@ export default function LoginPage() {
     onSuccess: (data) => {
       document.cookie = `token=${data.token}; path=/; max-age=${data.expires_in}`
       document.cookie = `userId=${form.getValues().userId}; path=/; max-age=${data.expires_in}`
+      setIsAuthenticated(true)
+      setTokenValue(data.token)
       toast.success("Vous vous êtes connecté avec succès.")
       router.push("/")
     },

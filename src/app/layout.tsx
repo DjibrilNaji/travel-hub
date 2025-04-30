@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar"
+import { AppProvider } from "@/context/useAppContext"
 import type { Metadata } from "next"
-import { cookies } from "next/headers"
 import { Toaster } from "sonner"
 import "./globals.css"
 import { ReactQueryProvider } from "./provider/TanstackQueryProvider"
@@ -15,19 +15,15 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const cookieStore = await cookies()
-  const token = cookieStore.get("token")
-  const userId = cookieStore.get("userId")?.value || ""
-  const isAuthenticated = !!token
-  const tokenValue = token?.value || ""
-
   return (
     <html lang="en">
       <body className="flex h-screen flex-col" suppressHydrationWarning>
         <ReactQueryProvider>
-          <Navbar isAuthenticated={isAuthenticated} userId={userId} tokenValue={tokenValue} />
-          {children}
-          <Toaster richColors />
+          <AppProvider>
+            <Navbar />
+            {children}
+            <Toaster richColors />
+          </AppProvider>
         </ReactQueryProvider>
       </body>
     </html>

@@ -16,7 +16,7 @@ export async function DELETE(request: NextRequest) {
 
   return NextResponse.json(
     {
-      message: `Deconexion de l'utilisateur : ${userId} avec le token : ${token} reussi`
+      message: `Deconexion de l'utilisateur : ${userId} reussi`
     },
     { status: StatusCodes.OK }
   )

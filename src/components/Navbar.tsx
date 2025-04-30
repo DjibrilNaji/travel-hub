@@ -1,25 +1,18 @@
 "use client"
 
+import { logout } from "@/app/services/auth"
 import { Button } from "@/components/ui/button"
+import { useApp } from "@/context/useAppContext"
 import { useMutation } from "@tanstack/react-query"
 import { LogOut, Plane } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
 import { toast } from "sonner"
-import { logout } from "../services/auth"
 
-export default function Navbar({
-  isAuthenticated,
-  tokenValue,
-  userId
-}: {
-  isAuthenticated: boolean
-  tokenValue: string
-  userId: string
-}) {
+export default function Navbar() {
   const router = useRouter()
-  const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated)
+
+  const { isAuthenticated, userId, tokenValue, setIsAuthenticated } = useApp()
 
   const { isPending, mutate } = useMutation({
     mutationFn: async () => await logout(userId, tokenValue),
@@ -27,7 +20,7 @@ export default function Navbar({
       document.cookie = "token=; path=/; max-age=0"
       document.cookie = "userId=; path=/; max-age=0"
 
-      setIsLoggedIn(false)
+      setIsAuthenticated(false)
       router.push("/login")
       toast.success("Vous vous êtes déconnecté avec succès.")
     },
@@ -45,7 +38,7 @@ export default function Navbar({
         </Link>
 
         <nav className="flex items-center gap-4">
-          {isLoggedIn ? (
+          {isAuthenticated ? (
             <>
               <Link href="/offers">
                 <Button className="cursor-pointer">Offres</Button>
