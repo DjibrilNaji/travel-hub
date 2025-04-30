@@ -1,0 +1,33 @@
+// Création des noeuds villes
+MERGE (par:City {code: "PAR"})
+MERGE (lon:City {code: "LON"})
+MERGE (bru:City {code: "BRU"})
+MERGE (ams:City {code: "AMS"})
+MERGE (mad:City {code: "MAD"})
+MERGE (fra:City {code: "FRA"})
+MERGE (rom:City {code: "ROM"})
+MERGE (bcn:City {code: "BCN"})
+MERGE (zur:City {code: "ZUR"})
+MERGE (vie:City {code: "VIE"})
+
+// Création des relations NEAR avec des scores différents
+MERGE (par)-[:NEAR {weight: 10}]->(lon)
+MERGE (par)-[:NEAR {weight: 8}]->(bru)
+MERGE (par)-[:NEAR {weight: 5}]->(ams)
+MERGE (par)-[:NEAR {weight: 7}]->(mad)
+MERGE (par)-[:NEAR {weight: 4}]->(fra)
+MERGE (par)-[:NEAR {weight: 2}]->(rom)
+MERGE (par)-[:NEAR {weight: 6}]->(bcn)
+MERGE (par)-[:NEAR {weight: 1}]->(zur)
+MERGE (par)-[:NEAR {weight: 3}]->(vie)
+
+// Pour montrer la réciprocité, quelques exemples dans l'autre sens
+MERGE (lon)-[:NEAR {weight: 10}]->(par)
+MERGE (bru)-[:NEAR {weight: 8}]->(par)
+MERGE (ams)-[:NEAR {weight: 5}]->(par)
+MERGE (mad)-[:NEAR {weight: 7}]->(par)
+MERGE (fra)-[:NEAR {weight: 4}]->(par)
+MERGE (rom)-[:NEAR {weight: 2}]->(par)
+MERGE (bcn)-[:NEAR {weight: 6}]->(par)
+MERGE (zur)-[:NEAR {weight: 1}]->(par)
+MERGE (vie)-[:NEAR {weight: 3}]->(par)

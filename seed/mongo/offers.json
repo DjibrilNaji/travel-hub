@@ -1,0 +1,662 @@
+[
+    {
+        "_id": {
+            "$oid": "2d6c112478db7909652eb78a"
+        },
+        "from": "LHR",
+        "to": "DXB",
+        "departDate": {
+            "$date": "2025-05-29T09:36:39.954552"
+        },
+        "returnDate": {
+            "$date": "2025-06-13T09:36:39.954571"
+        },
+        "provider": "American Airlines",
+        "price": 1134.0,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "BA145",
+                "dep": "LHR",
+                "arr": "DXB",
+                "duration": 716
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Tokyo",
+            "nights": 7,
+            "price": 500
+        },
+        "activity": {
+            "title": "Visite de la pyramide de Teotihuacan",
+            "price": 75
+        }
+    },
+    {
+        "_id": {
+            "$oid": "9794c5638996c81310996a96"
+        },
+        "from": "JFK",
+        "to": "SFO",
+        "departDate": {
+            "$date": "2025-05-06T09:36:39.954613"
+        },
+        "returnDate": {
+            "$date": "2025-06-05T09:36:39.954620"
+        },
+        "provider": "American Airlines",
+        "price": 342.9,
+        "currency": "EUR",
+        "legs": [
+            {
+                "flightNum": "DL217",
+                "dep": "JFK",
+                "arr": "SFO",
+                "duration": 624
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Tokyo",
+            "nights": 7,
+            "price": 500
+        },
+        "activity": {
+            "title": "Tour de Napa Valley",
+            "price": 120
+        }
+    },
+    {
+        "_id": {
+            "$oid": "464e508cca2df7ec48de6c71"
+        },
+        "from": "SYD",
+        "to": "AKL",
+        "departDate": {
+            "$date": "2025-05-10T09:36:39.954647"
+        },
+        "returnDate": {
+            "$date": "2025-06-19T09:36:39.954653"
+        },
+        "provider": "British Airways",
+        "price": 1069.2,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "AA334",
+                "dep": "SYD",
+                "arr": "AKL",
+                "duration": 482
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Nikko San Francisco",
+            "nights": 2,
+            "price": 400
+        },
+        "activity": {
+            "title": "Croisi\u00e8re dans le port d'Auckland",
+            "price": 80
+        }
+    },
+    {
+        "_id": {
+            "$oid": "d82a56312b66f45fe23a53f6"
+        },
+        "from": "LHR",
+        "to": "DXB",
+        "departDate": {
+            "$date": "2025-05-05T09:36:39.954674"
+        },
+        "returnDate": {
+            "$date": "2025-05-31T09:36:39.954681"
+        },
+        "provider": "AirZen",
+        "price": 1049.4,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "DL156",
+                "dep": "LHR",
+                "arr": "DXB",
+                "duration": 680
+            }
+        ],
+        "hotel": {
+            "name": "The Ritz London",
+            "nights": 5,
+            "price": 1200
+        },
+        "activity": {
+            "title": "Plong\u00e9e sous-marine \u00e0 Bali",
+            "price": 150
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6faf9bae6805c8f2f55e29e7"
+        },
+        "from": "SFO",
+        "to": "SEA",
+        "departDate": {
+            "$date": "2025-05-29T09:36:39.954715"
+        },
+        "returnDate": {
+            "$date": "2025-06-27T09:36:39.954722"
+        },
+        "provider": "Delta Airlines",
+        "price": 1287.0,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "DL339",
+                "dep": "SFO",
+                "arr": "SEA",
+                "duration": 642
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Tokyo",
+            "nights": 7,
+            "price": 500
+        },
+        "activity": {
+            "title": "Croisi\u00e8re dans le port d'Auckland",
+            "price": 80
+        }
+    },
+    {
+        "_id": {
+            "$oid": "dfdddebb0694f14867d370a0"
+        },
+        "from": "SFO",
+        "to": "SEA",
+        "departDate": {
+            "$date": "2025-05-21T09:36:39.954743"
+        },
+        "returnDate": {
+            "$date": "2025-06-28T09:36:39.954749"
+        },
+        "provider": "JetBlue Airways",
+        "price": 696.92,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "B6931",
+                "dep": "SFO",
+                "arr": "SEA",
+                "duration": 488
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Nikko San Francisco",
+            "nights": 2,
+            "price": 400
+        },
+        "activity": {
+            "title": "Croisi\u00e8re dans le port d'Auckland",
+            "price": 80
+        }
+    },
+    {
+        "_id": {
+            "$oid": "2e58e0ea1c8667782cb10801"
+        },
+        "from": "NYC",
+        "to": "LHR",
+        "departDate": {
+            "$date": "2025-05-24T09:36:39.954769"
+        },
+        "returnDate": {
+            "$date": "2025-06-11T09:36:39.954774"
+        },
+        "provider": "Delta Airlines",
+        "price": 1367.0,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "AA314",
+                "dep": "NYC",
+                "arr": "LHR",
+                "duration": 363
+            }
+        ],
+        "hotel": {
+            "name": "Grand Fiesta Americana",
+            "nights": 6,
+            "price": 800
+        },
+        "activity": {
+            "title": "Tour de la ville de Londres",
+            "price": 100
+        }
+    },
+    {
+        "_id": {
+            "$oid": "4b9e80c3299b2d17c299e925"
+        },
+        "from": "IST",
+        "to": "LHR",
+        "departDate": {
+            "$date": "2025-05-23T09:36:39.954801"
+        },
+        "returnDate": {
+            "$date": "2025-06-07T09:36:39.954809"
+        },
+        "provider": "AirZen",
+        "price": 989.25,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "BA850",
+                "dep": "IST",
+                "arr": "LHR",
+                "duration": 377
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Tokyo",
+            "nights": 7,
+            "price": 500
+        },
+        "activity": {
+            "title": "Visite de la pyramide de Teotihuacan",
+            "price": 75
+        }
+    },
+    {
+        "_id": {
+            "$oid": "b6d36143435c1cf5c66c0f1a"
+        },
+        "from": "CDG",
+        "to": "DUB",
+        "departDate": {
+            "$date": "2025-05-05T09:36:39.954830"
+        },
+        "returnDate": {
+            "$date": "2025-06-13T09:36:39.954836"
+        },
+        "provider": "Delta Airlines",
+        "price": 280.26,
+        "currency": "EUR",
+        "legs": [
+            {
+                "flightNum": "BA740",
+                "dep": "CDG",
+                "arr": "DUB",
+                "duration": 506
+            }
+        ],
+        "hotel": {
+            "name": "Auckland Waterfront Hotel",
+            "nights": 2,
+            "price": 300
+        },
+        "activity": {
+            "title": "Tour de Napa Valley",
+            "price": 120
+        }
+    },
+    {
+        "_id": {
+            "$oid": "9124553fe86be0eacd648a5b"
+        },
+        "from": "SFO",
+        "to": "SEA",
+        "departDate": {
+            "$date": "2025-05-14T09:36:39.954855"
+        },
+        "returnDate": {
+            "$date": "2025-06-01T09:36:39.954861"
+        },
+        "provider": "JetBlue Airways",
+        "price": 996.0,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "AA917",
+                "dep": "SFO",
+                "arr": "SEA",
+                "duration": 190
+            }
+        ],
+        "hotel": {
+            "name": "Hilton Dubai",
+            "nights": 3,
+            "price": 600
+        },
+        "activity": {
+            "title": "Tour de Napa Valley",
+            "price": 120
+        }
+    },
+    {
+        "_id": {
+            "$oid": "a62592ba194030a35dbdae15"
+        },
+        "from": "PAR",
+        "to": "TYO",
+        "departDate": {
+            "$date": "2025-05-25T09:36:39.954881"
+        },
+        "returnDate": {
+            "$date": "2025-06-02T09:36:39.954886"
+        },
+        "provider": "British Airways",
+        "price": 1070.17,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "QF258",
+                "dep": "PAR",
+                "arr": "TYO",
+                "duration": 381
+            }
+        ],
+        "hotel": {
+            "name": "Auckland Waterfront Hotel",
+            "nights": 2,
+            "price": 300
+        },
+        "activity": {
+            "title": "Plong\u00e9e sous-marine \u00e0 Bali",
+            "price": 150
+        }
+    },
+    {
+        "_id": {
+            "$oid": "c7c66e65d1bd1eb319a46dfc"
+        },
+        "from": "LAX",
+        "to": "MEX",
+        "departDate": {
+            "$date": "2025-05-28T09:36:39.954905"
+        },
+        "returnDate": {
+            "$date": "2025-06-24T09:36:39.954910"
+        },
+        "provider": "Qantas Airways",
+        "price": 1172.07,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "B6164",
+                "dep": "LAX",
+                "arr": "MEX",
+                "duration": 556
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Tokyo",
+            "nights": 7,
+            "price": 500
+        },
+        "activity": {
+            "title": "Tour de la ville de Londres",
+            "price": 100
+        }
+    },
+    {
+        "_id": {
+            "$oid": "068ebd09ac8f3a244cfe8f78"
+        },
+        "from": "LAX",
+        "to": "MEX",
+        "departDate": {
+            "$date": "2025-05-19T09:36:39.954930"
+        },
+        "returnDate": {
+            "$date": "2025-06-25T09:36:39.954935"
+        },
+        "provider": "JetBlue Airways",
+        "price": 332.1,
+        "currency": "EUR",
+        "legs": [
+            {
+                "flightNum": "AA355",
+                "dep": "LAX",
+                "arr": "MEX",
+                "duration": 444
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Tokyo",
+            "nights": 7,
+            "price": 500
+        },
+        "activity": {
+            "title": "Tour de la ville de Londres",
+            "price": 100
+        }
+    },
+    {
+        "_id": {
+            "$oid": "84557effc252d76807ba41c8"
+        },
+        "from": "JFK",
+        "to": "SFO",
+        "departDate": {
+            "$date": "2025-05-07T09:36:39.954954"
+        },
+        "returnDate": {
+            "$date": "2025-06-05T09:36:39.954959"
+        },
+        "provider": "Qantas Airways",
+        "price": 967.14,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "AA372",
+                "dep": "JFK",
+                "arr": "SFO",
+                "duration": 344
+            }
+        ],
+        "hotel": {
+            "name": "Hilton Dubai",
+            "nights": 3,
+            "price": 600
+        },
+        "activity": {
+            "title": "Tour de Napa Valley",
+            "price": 120
+        }
+    },
+    {
+        "_id": {
+            "$oid": "9696d69316a18ae3b7ee54b6"
+        },
+        "from": "CDG",
+        "to": "DUB",
+        "departDate": {
+            "$date": "2025-04-30T09:36:39.954978"
+        },
+        "returnDate": {
+            "$date": "2025-06-11T09:36:39.954983"
+        },
+        "provider": "American Airlines",
+        "price": 630.99,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "AA552",
+                "dep": "CDG",
+                "arr": "DUB",
+                "duration": 657
+            }
+        ],
+        "hotel": {
+            "name": "Grand Fiesta Americana",
+            "nights": 6,
+            "price": 800
+        },
+        "activity": {
+            "title": "Visite de la pyramide de Teotihuacan",
+            "price": 75
+        }
+    },
+    {
+        "_id": {
+            "$oid": "99f5b12dd5e57de277278454"
+        },
+        "from": "SYD",
+        "to": "AKL",
+        "departDate": {
+            "$date": "2025-05-03T09:36:39.955003"
+        },
+        "returnDate": {
+            "$date": "2025-06-28T09:36:39.955008"
+        },
+        "provider": "American Airlines",
+        "price": 1042.47,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "B6769",
+                "dep": "SYD",
+                "arr": "AKL",
+                "duration": 554
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Nikko San Francisco",
+            "nights": 2,
+            "price": 400
+        },
+        "activity": {
+            "title": "Tour de Napa Valley",
+            "price": 120
+        }
+    },
+    {
+        "_id": {
+            "$oid": "62f576c9c2c28f895a4013a4"
+        },
+        "from": "NYC",
+        "to": "LHR",
+        "departDate": {
+            "$date": "2025-05-26T09:36:39.955032"
+        },
+        "returnDate": {
+            "$date": "2025-06-12T09:36:39.955037"
+        },
+        "provider": "British Airways",
+        "price": 572.67,
+        "currency": "EUR",
+        "legs": [
+            {
+                "flightNum": "QF325",
+                "dep": "NYC",
+                "arr": "LHR",
+                "duration": 392
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Nikko San Francisco",
+            "nights": 2,
+            "price": 400
+        },
+        "activity": {
+            "title": "Plong\u00e9e sous-marine \u00e0 Bali",
+            "price": 150
+        }
+    },
+    {
+        "_id": {
+            "$oid": "52a724ae84b8ee17c778dd19"
+        },
+        "from": "BKK",
+        "to": "HKG",
+        "departDate": {
+            "$date": "2025-05-16T09:36:39.955054"
+        },
+        "returnDate": {
+            "$date": "2025-06-10T09:36:39.955059"
+        },
+        "provider": "British Airways",
+        "price": 1127.52,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "DL744",
+                "dep": "BKK",
+                "arr": "HKG",
+                "duration": 537
+            }
+        ],
+        "hotel": {
+            "name": "Hotel Nikko San Francisco",
+            "nights": 2,
+            "price": 400
+        },
+        "activity": {
+            "title": "Visite de la pyramide de Teotihuacan",
+            "price": 75
+        }
+    },
+    {
+        "_id": {
+            "$oid": "65015dbd2c454b7a2aff82f2"
+        },
+        "from": "JFK",
+        "to": "SFO",
+        "departDate": {
+            "$date": "2025-05-11T09:36:39.955074"
+        },
+        "returnDate": {
+            "$date": "2025-05-31T09:36:39.955080"
+        },
+        "provider": "AirZen",
+        "price": 1197.0,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "B6879",
+                "dep": "JFK",
+                "arr": "SFO",
+                "duration": 595
+            }
+        ],
+        "hotel": {
+            "name": "Hilton Dubai",
+            "nights": 3,
+            "price": 600
+        },
+        "activity": {
+            "title": "Visite de la pyramide de Teotihuacan",
+            "price": 75
+        }
+    },
+    {
+        "_id": {
+            "$oid": "b99d589034ff380ea7127c38"
+        },
+        "from": "BKK",
+        "to": "HKG",
+        "departDate": {
+            "$date": "2025-05-05T09:36:39.955095"
+        },
+        "returnDate": {
+            "$date": "2025-06-11T09:36:39.955100"
+        },
+        "provider": "JetBlue Airways",
+        "price": 779.22,
+        "currency": "USD",
+        "legs": [
+            {
+                "flightNum": "QF887",
+                "dep": "BKK",
+                "arr": "HKG",
+                "duration": 258
+            }
+        ],
+        "hotel": {
+            "name": "Grand Fiesta Americana",
+            "nights": 6,
+            "price": 800
+        },
+        "activity": {
+            "title": "Tour de la ville de Londres",
+            "price": 100
+        }
+    }
+]
