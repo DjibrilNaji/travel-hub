@@ -1,7 +1,7 @@
+import Navbar from "@/components/Navbar"
 import type { Metadata } from "next"
 import { cookies } from "next/headers"
 import { Toaster } from "sonner"
-import Navbar from "./components/Navbar"
 import "./globals.css"
 import { ReactQueryProvider } from "./provider/TanstackQueryProvider"
 

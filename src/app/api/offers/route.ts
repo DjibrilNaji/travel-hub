@@ -29,7 +29,7 @@ export async function GET(req: NextRequest) {
         { from, to },
         {
           projection: {
-            _id: 0,
+            id: 1,
             from: 1,
             to: 1,
             departDate: 1,
