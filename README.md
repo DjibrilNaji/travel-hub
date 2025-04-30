@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Guide d'installation rapide – Travel Hub avec Docker Compose
 
-## Getting Started
+## Prérequis
 
-First, run the development server:
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installé sur votre machine
+- [Git](https://git-scm.com/) (pour cloner le projet, si besoin)
+
+---
+
+## Installation & lancement
+
+1. **Clonez ce dépôt** (si ce n'est pas déjà fait) :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <url-du-repo>
+cd travel-hub
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Lancez tous les services avec Docker Compose :**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+docker compose up -d
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Cela démarre Next.js, MongoDB, Neo4j, Redis, etc.  
+L'application Next.js sera accessible sur [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Configuration importante
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Ne modifiez pas les variables d'environnement pour pointer sur `localhost` :**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Dans Docker Compose, chaque service communique via le nom du service (ex : `mongodb`, `neo4j`, `redis`), jamais `localhost`.
 
-## Deploy on Vercel
+Exemple de `.env` (déjà prêt dans le projet) :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+MONGODB_URI=mongodb://root:root@mongodb:27017/
+NEO4J_URI=bolt://neo4j:7687
+NEO4J_USER=neo4j
+NEO4J_PASSWORD=neo4jpassword
+REDIS_HOST=redis
+REDIS_PORT=6379
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Insérer des données de test (seeds)
+
+### Pour Neo4j
+
+- Les requêtes Cypher de seed sont dans le dossier [`seed/neo4j`](./seed/neo4j).
+- Pour les insérer :
+  1. Ouvrez **Neo4j Browser** (généralement sur [http://localhost:7474](http://localhost:7474)).
+  2. Connectez-vous avec les identifiants du `.env`.
+  3. **Copiez-collez** le contenu des fichiers du dossier `seed/neo4j` dans la console Cypher puis exécutez.
+
+### Pour MongoDB
+
+- Les fichiers JSON de seed sont dans [`seed/mongo`](./seed/mongo).
+- Pour les insérer :
+  1. Ouvrez **MongoDB Compass** (téléchargeable [ici](https://www.mongodb.com/try/download/compass)).
+  2. Connectez-vous à votre base : `mongodb://root:root@localhost:27017/`
+  3. Pour chaque collection, cliquez sur votre base > collection > **"Import Data"** et sélectionnez le JSON correspondant du dossier `seed/mongo`.
+
+---
+
+## Résumé
+
+- Démarrage ultra-simple :  
+
+```bash
+docker compose up -d
+```
+
+- Les services communiquent par leur nom (`mongodb`, `neo4j`, `redis`) dans Docker, pas par `localhost`.
+
+- Les seeds sont à importer manuellement :
+  - Neo4j : copier-coller dans Neo4j Browser depuis `seed/neo4j`
+  - MongoDB : import JSON via Compass depuis `seed/mongo`

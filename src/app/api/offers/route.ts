@@ -1,4 +1,4 @@
-import cache from "@/lib/cache"
+import cacheHandler from "@/lib/cache"
 import { mongo } from "@/lib/db"
 import { StatusCodes } from "http-status-codes"
 import { ObjectId } from "mongodb"
@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Missing parameters" }, { status: StatusCodes.BAD_REQUEST })
 
   const cacheKey = `offers:${from}:${to}`
-  const cached = await cache.getBuffer(cacheKey)
+  const cached = await cacheHandler.getBuffer(cacheKey)
 
   if (cached) {
     const json = zlib.gunzipSync(cached).toString()
@@ -45,7 +45,7 @@ export async function GET(req: NextRequest) {
       .toArray()
 
     const compressed = zlib.gzipSync(JSON.stringify(offers))
-    await cache.set(cacheKey, compressed, "EX", 60)
+    await cacheHandler.set(cacheKey, compressed, "EX", 60)
 
     return NextResponse.json(offers)
   } catch (error) {

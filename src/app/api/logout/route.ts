@@ -1,4 +1,4 @@
-import cache from "@/lib/cache"
+import cacheHandler from "@/lib/cache"
 import { StatusCodes } from "http-status-codes"
 import { NextRequest, NextResponse } from "next/server"
 
@@ -12,7 +12,7 @@ export async function DELETE(request: NextRequest) {
     )
   }
 
-  await cache.del(`session:${token}`)
+  await cacheHandler.del(`session:${token}`)
 
   return NextResponse.json(
     {

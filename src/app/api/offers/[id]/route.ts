@@ -1,4 +1,4 @@
-import cache from "@/lib/cache";
+import cacheHandler from "@/lib/cache";
 import { mongo } from "@/lib/db";
 import neo4j from "@/lib/neo4j";
 import { StatusCodes } from "http-status-codes";
@@ -21,7 +21,7 @@ export async function GET(
 
   const cacheKey = `offer:${resolvedParams.id}`;
 
-  const cached = await cache.getBuffer(cacheKey);
+  const cached = await cacheHandler.getBuffer(cacheKey);
 
   if (cached) {
     const json = zlib.gunzipSync(cached).toString();
@@ -57,7 +57,7 @@ export async function GET(
     session.close();
 
     const compressed = zlib.gzipSync(JSON.stringify({ offer, relatedOffers }));
-    await cache.set(cacheKey, compressed, "EX", 300);
+    await cacheHandler.set(cacheKey, compressed, "EX", 300);
 
     return NextResponse.json(
       { offer, relatedOffers },
