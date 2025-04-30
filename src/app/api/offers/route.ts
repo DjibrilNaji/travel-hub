@@ -51,7 +51,7 @@ export async function GET(req: NextRequest) {
     console.error("Error fetching offers:", error);
 
     return NextResponse.json(
-      { error: `Internal error: ${error}` },
+      { error: "An internal server error occurred." },
       { status: StatusCodes.INTERNAL_SERVER_ERROR }
     )
   }
