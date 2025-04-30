@@ -4,20 +4,23 @@ import { NextResponse } from "next/server"
 export function middleware(request: NextRequest) {
   const token = request.cookies.get("token")?.value
 
-  const isLoginPage = request.nextUrl.pathname.startsWith("/login")
-  const isHomePage = request.nextUrl.pathname === "/"
+  const pathname = request.nextUrl.pathname
+
+  const isLoginPage = pathname.startsWith("/login")
+  const isHomePage = pathname === "/"
+  const isOffersPage = pathname.startsWith("/offers")
 
   if (token && (isLoginPage || isHomePage)) {
     return NextResponse.redirect(new URL("/offers", request.url))
   }
 
-  if (!token && request.nextUrl.pathname.startsWith("/offers")) {
+  if (!token && isOffersPage) {
     return NextResponse.redirect(new URL("/login", request.url))
   }
 
-  return NextResponse.next() // laisser passer sinon
+  return NextResponse.next()
 }
 
 export const config = {
-  matcher: ["/", "/login", "/offers"]
+  matcher: ["/", "/login", "/offers/:path*"]
 }

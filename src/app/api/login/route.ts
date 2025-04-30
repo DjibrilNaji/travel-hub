@@ -21,8 +21,6 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ token, expires_in: CACHE_EXPIRATION }, { status: StatusCodes.OK })
   } catch (error) {
-    console.error("Erreur lors de la création du token:", error);
-
     return NextResponse.json(
       { message: "Erreur lors de la création du token" },
       { status: StatusCodes.INTERNAL_SERVER_ERROR }
