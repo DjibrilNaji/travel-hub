@@ -1,5 +1,11 @@
-import Redis from "ioredis"
+import Redis from "ioredis";
 
-export const cache = new Redis()
+const redisHost = process.env.REDIS_HOST!;
+const redisPort = process.env.REDIS_PORT!;
 
-export default cache
+const cache = new Redis({
+  host: redisHost,
+  port: Number(redisPort)
+});
+
+export default cache;

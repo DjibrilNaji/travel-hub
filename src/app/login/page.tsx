@@ -107,7 +107,7 @@ export default function LoginPage() {
 
           <CardFooter>
             <p className="text-muted-foreground text-sm">
-              Utilisez n'importe quel identifiant (ex: u42).
+              Utilisez n&apos;importe quel identifiant (ex: u42).
             </p>
           </CardFooter>
         </Card>

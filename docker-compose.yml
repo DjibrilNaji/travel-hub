@@ -32,6 +32,19 @@ services:
     volumes:
       - neo4j_data:/data
 
+  nextjs:
+    build:
+      context: .      
+      dockerfile: Dockerfile  
+    platform: linux/arm64
+    container_name: nextjs
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+      - redis
+      - neo4j
+
 volumes:
   mongo_data:
   redis_data:

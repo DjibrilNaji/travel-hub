@@ -1,4 +1,4 @@
-import cache from "@/lib/cache"
+import cacheHandler from "@/lib/cache"
 import { StatusCodes } from "http-status-codes"
 import { NextRequest, NextResponse } from "next/server"
 import { v4 as uuid } from "uuid"
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     }
 
     const token = uuid()
-    await cache.set(`session:${token}`, userId, "EX", CACHE_EXPIRATION)
+    await cacheHandler.set(`session:${token}`, userId, "EX", CACHE_EXPIRATION)
 
     return NextResponse.json({ token, expires_in: CACHE_EXPIRATION }, { status: StatusCodes.OK })
   } catch (error) {
