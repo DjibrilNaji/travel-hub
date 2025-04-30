@@ -54,7 +54,7 @@ export default function LoginPage() {
       setIsAuthenticated(true)
       setTokenValue(data.token)
       toast.success("Vous vous êtes connecté avec succès.")
-      router.push("/")
+      router.push("/offers")
     },
     onError: (error) => {
       toast.error(error.message)
