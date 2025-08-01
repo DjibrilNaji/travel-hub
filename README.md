@@ -1,39 +1,39 @@
-# Guide d'installation rapide – Travel Hub avec Docker Compose
+# Quick Installation Guide – Travel Hub with Docker Compose
 
-## Prérequis
+## Prerequisites
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installé sur votre machine
-- [Git](https://git-scm.com/) (pour cloner le projet, si besoin)
-
----
-
-## Installation & lancement
-
-1. **Clonez ce dépôt** (si ce n'est pas déjà fait) :
-
-```bash
-git clone https://github.com/DjibrilNaji/travel-hub.git
-cd travel-hub
-```
-
-2. **Lancez tous les services avec Docker Compose :**
-
-```bash
-docker compose up -d
-```
-
-Cela démarre Next.js, MongoDB, Neo4j, Redis, etc.  
-L'application Next.js sera accessible sur [http://localhost:3000](http://localhost:3000).
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine  
+- [Git](https://git-scm.com/) (to clone the project, if needed)
 
 ---
 
-## Configuration importante
+## Installation & Startup
 
-**Ne modifiez pas les variables d'environnement pour pointer sur `localhost` :**
+1. **Clone this repository** (if not already done):
 
-- Dans Docker Compose, chaque service communique via le nom du service (ex : `mongodb`, `neo4j`, `redis`), jamais `localhost`.
+    ```bash
+    git clone https://github.com/DjibrilNaji/travel-hub.git
+    cd travel-hub
+    ```
 
-Exemple de `.env` (déjà prêt dans le projet) :
+2. **Start all services with Docker Compose:**
+
+    ```bash
+    docker compose up -d
+    ```
+
+    This will start Next.js, MongoDB, Neo4j, Redis, etc.  
+    The Next.js app will be available at [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Important Configuration
+
+**Do not change environment variables to use `localhost`:**
+
+- In Docker Compose, services communicate using their service names (e.g., `mongodb`, `neo4j`, `redis`), never `localhost`.
+
+Example `.env` file (already provided in the project):
 
 ```env
 MONGODB_URI=mongodb://root:root@mongodb:27017/
@@ -46,36 +46,36 @@ REDIS_PORT=6379
 
 ---
 
-## Insérer des données de test (seeds)
+## Insert Test Data (Seeds)
 
-### Pour Neo4j
+### For Neo4j
 
-- Les requêtes Cypher de seed sont dans le dossier [`seed/neo4j`](./seed/neo4j).
-- Pour les insérer :
-  1. Ouvrez **Neo4j Browser** (généralement sur [http://localhost:7474](http://localhost:7474)).
-  2. Connectez-vous avec les identifiants du `.env`.
-  3. **Copiez-collez** le contenu des fichiers du dossier `seed/neo4j` dans la console Cypher puis exécutez.
+- Cypher seed queries are located in the [`seed/neo4j`](./seed/neo4j) folder.
+- To insert them:
+  1. Open **Neo4j Browser** (usually at [http://localhost:7474](http://localhost:7474)).
+  2. Log in using the credentials from the `.env` file.
+  3. **Copy and paste** the contents of the files in `seed/neo4j` into the Cypher console and execute.
 
-### Pour MongoDB
+### For MongoDB
 
-- Les fichiers JSON de seed sont dans [`seed/mongo`](./seed/mongo).
-- Pour les insérer :
-  1. Ouvrez **MongoDB Compass** (téléchargeable [ici](https://www.mongodb.com/try/download/compass)).
-  2. Connectez-vous à votre base : `mongodb://root:root@localhost:27017/`
-  3. Pour chaque collection, cliquez sur votre base > collection > **"Import Data"** et sélectionnez le JSON correspondant du dossier `seed/mongo`.
+- Seed JSON files are located in [`seed/mongo`](./seed/mongo).
+- To insert them:
+  1. Open **MongoDB Compass** (download it [here](https://www.mongodb.com/try/download/compass)).
+  2. Connect to your database: `mongodb://root:root@localhost:27017/`
+  3. For each collection, go to your database > collection > click **"Import Data"** then choose the matching JSON file from `seed/mongo`.
 
 ---
 
-## Résumé
+## Summary
 
-- Démarrage ultra-simple :
+- Start everything with:
 
 ```bash
 docker compose up -d
 ```
 
-- Les services communiquent par leur nom (`mongodb`, `neo4j`, `redis`) dans Docker, pas par `localhost`.
+- Services communicate using their service name (`mongodb`, `neo4j`, `redis`) inside Docker, not `localhost`.
 
-- Les seeds sont à importer manuellement :
-  - Neo4j : copier-coller dans Neo4j Browser depuis `seed/neo4j`
-  - MongoDB : import JSON via Compass depuis `seed/mongo`
+- Seeds must be imported manually:
+  - Neo4j : copy-paste into Neo4j Browser from `seed/neo4j`
+  - MongoDB : import JSON via Compass from `seed/mongo`
